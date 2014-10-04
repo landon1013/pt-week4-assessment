@@ -4,12 +4,21 @@
     <title>ToDo List</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body ng-app="toDo" ng-controller="mainCtrl">
 
+<input class="input" placeholder="Enter item to Add" ng-model="addTodoItem">
+<button ng-click="addItem()">Add Item</button>
+
+<input class="input" placeholder="Enter item to Remove" ng-model="removeTodoItem">
+<button ng-click="removeItem()">Remove Item</button>
+
+<ul>
+    <li ng-repeat="item in items"><button ng-click="removeItem()">X</button>{{" " + item}}</li>
+</ul>
 
 <script src='http://code.angularjs.org/1.1.5/angular.js' type='text/javascript'></script>
-<script href="js/app.js"></script>
-<script href="js/mainCtrl.js"></script>
-<script href="js/mainService.js"></script>
+<script src="js/app.js"></script>
+<script src="js/mainCtrl.js"></script>
+<script src="js/mainService.js"></script>
 </body>
 </html>
